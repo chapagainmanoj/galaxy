@@ -194,7 +194,7 @@ function handleApiAiAction(sender, action, responseText, contexts, parameters) {
 						apiid: config.OWM_API_KEY,
 						q: parameters["geo-city"]
 					}
-				}, function (err, response, body) {
+				}, function (error, response, body) {
 					if(!error && response.statusCode == 200){
 						let weather = JSON.parse(body);
 						if (weather.hasOwnProperty("weather")) {
