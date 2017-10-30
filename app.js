@@ -191,7 +191,7 @@ function handleApiAiAction(sender, action, responseText, contexts, parameters) {
 				request({
 					url: 'http://api.openweathermap.org/data/2.5/weather',
 					qs: {
-						apiid: config.OWM_API_KEY,
+						appid: config.OWM_API_KEY,
 						q: parameters["geo-city"]
 					}
 				}, function (error, response, body) {
