@@ -195,6 +195,7 @@ function handleApiAiAction(sender, action, responseText, contexts, parameters) {
 						q: parameters["geo-city"]
 					}
 				}, function (error, response, body) {
+					console.log(response);
 					if(!error && response.statusCode == 200){
 						let weather = JSON.parse(body);
 						if (weather.hasOwnProperty("weather")) {
