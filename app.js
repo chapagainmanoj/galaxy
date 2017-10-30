@@ -1,14 +1,14 @@
 'use strict';
 
 import 'babel-polyfill';
-const apiai = require('apiai');
+
 const config = require('./config');
 const express = require('express');
 const crypto = require('crypto');
 const bodyParser = require('body-parser');
-const request = require('request');
+
 const app = express();
-const uuid = require('uuid');
+
 
 import {
 	receivedMessage,
@@ -77,11 +77,6 @@ function verifyRequestSignature(req, res, buf) {
 	}
 }
 
-
-const apiAiService = apiai(config.API_AI_CLIENT_ACCESS_TOKEN, {
-	language: "en",
-	requestSource: "fb"
-});
 
 
 // Index route
