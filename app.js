@@ -185,7 +185,7 @@ function handleEcho(messageId, appId, metadata) {
 function handleApiAiAction(sender, action, responseText, contexts, parameters) {
 	switch (action) {
 		case "get-current-weather":
-			if (parameters.hasOwnProperty("geo-city") && parameters("geo-city")!=''){
+			if (parameters.hasOwnProperty("geo-city") && parameters["geo-city"]!=''){
 				var request = require('request');
 				//http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=661142e74dc2e201e75160cd46bbec02
 				request({
