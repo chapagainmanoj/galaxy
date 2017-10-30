@@ -1,6 +1,7 @@
 const apiai = require('apiai');
 const uuid = require('uuid');
 const request = require('request');
+import config from '../config';
 
 const sessionIds = new Map();
 const apiAiService = apiai(config.API_AI_CLIENT_ACCESS_TOKEN, {
