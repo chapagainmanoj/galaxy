@@ -1,4 +1,5 @@
 
+const sessionIds = new Map();
 
 function receivedMessage(event) {
 
