@@ -4,4 +4,5 @@ module.exports = {
     API_AI_CLIENT_ACCESS_TOKEN: '4e935aa911fc4592a28a497049778276',
     FB_APP_SECRET: 'cac07d244ee28ea0f4480385c98f87bf',
     SERVER_URL: "https://smart-jimmy.herokuapp.com",
+    OWM_API_KEY: '661142e74dc2e201e75160cd46bbec02'
 };
