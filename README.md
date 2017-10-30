@@ -1,2 +1,2 @@
 ## galaxy
-a chatbot for ecommerce sites
+a chatbot for ecommerce

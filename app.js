@@ -1,5 +1,6 @@
 'use strict';
 
+import 'babel-polyfill';
 const apiai = require('apiai');
 const config = require('./config');
 const express = require('express');
@@ -16,7 +17,7 @@ import {
 	receivedMessageRead,
 	receivedAccountLink,
 	receivedDeliveryConfirmation
-} from './src/dialoghandler'
+} from './src/dialoghandler';
 
 
 // Messenger API parameters
