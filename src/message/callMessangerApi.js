@@ -3,6 +3,7 @@
  * get the message id in a response
  * --- greets user with its first name
  */
+const request = require('request');
 export function callSendAPI(messageData) {
 	request({
 		uri: 'https://graph.facebook.com/v2.6/me/messages',
