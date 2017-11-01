@@ -4,6 +4,9 @@
  * --- greets user with its first name
  */
 const request = require('request');
+import {sendTextMessage} from './sendMessage';
+import config from '../../config';
+
 export function callSendAPI(messageData) {
 	request({
 		uri: 'https://graph.facebook.com/v2.6/me/messages',
