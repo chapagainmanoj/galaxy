@@ -9,7 +9,7 @@ const apiAiService = apiai(config.API_AI_CLIENT_ACCESS_TOKEN, {
 	requestSource: "fb"
 });
 
-import callSendAPI from './messageData/callSendApi';
+import callSendAPI from './message/callSendApi';
 
 function receivedMessage(event) {
 
