@@ -1,7 +1,7 @@
 /*
  * Call the Send API. The message data goes in the body. If successful, we'll
  * get the message id in a response
- *
+ * --- greets user with its first name
  */
 export function callSendAPI(messageData) {
 	request({
