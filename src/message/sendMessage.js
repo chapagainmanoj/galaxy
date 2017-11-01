@@ -242,7 +242,7 @@ export function sendReadReceipt(recipientId) {
  * Turn typing indicator on
  *
  */
-function sendTypingOn(recipientId) {
+export function sendTypingOn(recipientId) {
 
 
 	var messageData = {
