@@ -16,7 +16,7 @@ import {
 	receivedMessageRead,
 	receivedAccountLink,
 	receivedDeliveryConfirmation
-} from './src/dialoghandler';
+} from './src/messageHandler';
 
 
 // Messenger API parameters
