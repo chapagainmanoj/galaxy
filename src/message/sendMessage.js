@@ -1,6 +1,6 @@
 // calls messanger api to send message
-import {callSendAPI} from './callMessangerApi';
-import config from '../../config';
+//import {callSendAPI} from './callMessangerApi';
+//import config from '../../config';
 
 
 export function sendTextMessage(recipientId, text) {
