@@ -1,5 +1,5 @@
 // calls messanger api to send message
-import {callSendAPI} from 'callMessangerApi';
+import {callSendAPI} from './callMessangerApi';
 import config from '../../config';
 
 
