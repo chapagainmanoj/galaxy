@@ -22,6 +22,7 @@ import {
 	sendTypingOff,
 	sendAccountLinking
 } from './message/sendMessage';
+import callWeatherApi from './src/api/callWeatherApi';
 
 const sessionIds = new Map();
 const apiAiService = apiai(config.API_AI_CLIENT_ACCESS_TOKEN, {

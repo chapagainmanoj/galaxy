@@ -18,12 +18,6 @@ import {
 	receivedDeliveryConfirmation
 } from './src/messageHandler';
 
-import callWeatherApi from './src/api/callWeatherApi';
-callWeatherApi('Kathamandu').then((output)=>{
-	console.log(output);
-}).catch((error)=>{
-	console.log(error);
-});
 
 // Messenger API parameters
 if (!config.FB_PAGE_TOKEN) {
