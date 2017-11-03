@@ -93,32 +93,38 @@ function handleApiAiAction(sender, action, responseText, contexts, parameters) {
 	switch (action) {
 		case "get-current-weather":
 			if (parameters.hasOwnProperty("geo-city") && parameters["geo-city"]!=''){
-				var request = require('request');
-				//http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=661142e74dc2e201e75160cd46bbec02
-				request({
-					url: 'http://api.openweathermap.org/data/2.5/weather',
-					qs: {
-						appid: config.OWM_API_KEY,
-						q: parameters["geo-city"]
-					}
-				}, function (error, response, body) {
-					console.log(response);
-					if(!error && response.statusCode == 200){
-						let weather = JSON.parse(body);
-						if (weather.hasOwnProperty("weather")) {
-							console.log(weather);
-							let reply= `${responseText} ${weather["weather"][0]["description"]}`;
-							console.log(weather["weather"][0]["description"]);
-							sendTextMessage(sender, reply);
-						}else {
-							sendTextMessage(sender,
-							`No weather forcast available for ${parameters["geo-city"]}`);
-						}
-					}else {
-						console.error(response.error);
-					}
-				}
-			);
+
+				callWeatherApi(parameters["geo-city"],responseText).then((output)=>{
+					sendTextMessage(sender, reply);
+				}).catch((error)=>{
+					console.error(error);
+				});
+			// 	var request = require('request');
+			// 	//http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=661142e74dc2e201e75160cd46bbec02
+			// 	request({
+			// 		url: 'http://api.openweathermap.org/data/2.5/weather',
+			// 		qs: {
+			// 			appid: config.OWM_API_KEY,
+			// 			q: parameters["geo-city"]
+			// 		}
+			// 	}, function (error, response, body) {
+			// 		console.log(response);
+			// 		if(!error && response.statusCode == 200){
+			// 			let weather = JSON.parse(body);
+			// 			if (weather.hasOwnProperty("weather")) {
+			// 				console.log(weather);
+			// 				let reply= `${responseText} ${weather["weather"][0]["description"]}`;
+			// 				console.log(weather["weather"][0]["description"]);
+			// 				sendTextMessage(sender, reply);
+			// 			}else {
+			// 				sendTextMessage(sender,
+			// 				`No weather forcast available for ${parameters["geo-city"]}`);
+			// 			}
+			// 		}else {
+			// 			console.error(response.error);
+			// 		}
+			// 	}
+			// );
 			} else {
 				sendTextMessage(sender, responseText);
 			}

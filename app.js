@@ -18,6 +18,12 @@ import {
 	receivedDeliveryConfirmation
 } from './src/messageHandler';
 
+import callWeatherApi from './src/api/callWeatherApi';
+callWeatherApi('Kathamandu').then((output)=>{
+	console.log(output);
+}).catch((error)=>{
+	console.log(error);
+});
 
 // Messenger API parameters
 if (!config.FB_PAGE_TOKEN) {
@@ -51,10 +57,10 @@ app.use(express.static('public'));
 // Process application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({
 	extended: false
-}))
+}));
 
 // Process application/json
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 
 function verifyRequestSignature(req, res, buf) {
 	var signature = req.headers["x-hub-signature"];
@@ -80,7 +86,7 @@ function verifyRequestSignature(req, res, buf) {
 
 // Index route
 app.get('/', function (req, res) {
-	res.send('Hello world, I am a chat bot')
+	res.send('Hello world, I am Jimmy.')
 })
 
 // for Facebook verification
